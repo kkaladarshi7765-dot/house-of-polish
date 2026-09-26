@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth bg-[#05070D]">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <title>House of Polish | Supercar Detailing & Cleanroom Studio • Golf Course Road</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Google Fonts: Syne, Space Grotesk & Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@700;800;900&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            syne: ['"Syne"', 'sans-serif'],
+            mono: ['"Space Grotesk"', 'monospace'],
+            sans: ['"Outfit"', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              gold: '#D4AF37',
+              goldLight: '#F5DE93',
+              goldDark: '#8C6B1B',
+              cyan: '#00F0FF',
+              cyanGlow: 'rgba(0, 240, 255, 0.4)',
+              obsidian: '#05070D',
+              panel: '#090D18',
+              card: '#0D1322'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Absolute reset to prevent phone horizontal bleed */
+    *, *::before, *::after {
+      box-sizing: border-box !important;
+      margin: 0;
+      padding: 0;
+    }
+    html, body {
+      width: 100vw;
+      max-width: 100vw;
+      overflow-x: hidden !important;
+      background-color: #05070D;
+      color: #E2E8F0;
+      font-family: 'Outfit', sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    .carbon-texture {
+      background-color: #05070D;
+      background-image: 
+        radial-gradient(rgba(212, 175, 55, 0.04) 1px, transparent 0),
+        radial-gradient(rgba(0, 240, 255, 0.03) 1px, #05070D 100%);
+      background-size: 20px 20px, 100% 100%;
+    }
+    .glow-gold {
+      box-shadow: 0 0 30px rgba(212, 175, 55, 0.22);
+    }
+    .glow-cyan {
+      box-shadow: 0 0 30px rgba(0, 240, 255, 0.25);
+    }
+    .metallic-border {
+      border: 1px solid rgba(212, 175, 55, 0.28);
+    }
+    .metallic-border-cyan {
+      border: 1px solid rgba(0, 240, 255, 0.35);
+    }
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+  </style>
+</head>
+<body class="carbon-texture min-h-screen text-slate-100 flex flex-col justify-between selection:bg-brand-cyan selection:text-black">
+
+  <!-- Top Studio Status Bar -->
+  <aside aria-label="Studio Announcement" class="w-full bg-[#020307] border-b border-brand-gold/25 py-2 px-3 sm:px-6 text-[11px] font-mono flex items-center justify-between text-slate-300">
+    <div class="flex items-center gap-2 truncate">
+      <span class="inline-block w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse shrink-0"></span>
+      <span class="text-brand-goldLight font-bold">CLEANROOM BAYS 1 & 2 OPERATIONAL</span>
+      <span class="hidden md:inline text-slate-500">• Golf Course Road, Gurgaon</span>
+    </div>
+    <div class="flex items-center gap-3 shrink-0">
+      <span class="text-brand-cyan hidden sm:inline">STRICTLY 2 ALLOCATIONS / DAY</span>
+      <a href="tel:+918368787610" class="text-white hover:text-brand-gold font-bold flex items-center gap-1 transition">
+        <span>📞</span> +91 83687 87610
+      </a>
+    </div>
+  </aside>
+
+  <!-- Main Navigation Header -->
+  <header class="sticky top-0 z-40 bg-[#05070D]/95 backdrop-blur-xl border-b border-white/10 px-4 sm:px-8 py-3.5">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl bg-gradient-to-tr from-brand-gold via-brand-goldLight to-brand-cyan p-[1.5px] shadow-lg">
+          <div class="w-full h-full bg-[#070A12] rounded-2xl flex items-center justify-center font-syne font-black text-brand-gold text-lg tracking-wider">
+            HP
+          </div>
+        </div>
+        <div>
+          <span class="font-syne font-extrabold tracking-wider text-lg sm:text-xl text-white block leading-tight">HOUSE OF POLISH</span>
+          <span class="text-[9px] font-mono tracking-widest text-brand-cyan block uppercase">Supercar Detailing Lab • Golf Course Rd</span>
+        </div>
+      </div>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden lg:flex items-center gap-6 text-xs font-mono uppercase tracking-wider text-slate-300">
+        <a href="#lab" class="hover:text-brand-cyan transition">Visual Lab</a>
+        <a href="#bays" class="hover:text-brand-cyan transition">Live Bay Telemetry</a>
+        <a href="#packages" class="hover:text-brand-cyan transition">Treatments</a>
+        <a href="#gallery" class="hover:text-brand-cyan transition">Supercar Roster</a>
+        <a href="#booking" class="hover:text-brand-gold transition">Bay Reservation</a>
+      </nav>
+
+      <div class="flex items-center gap-2">
+        <a href="#booking" class="px-4 py-2 sm:px-5 sm:py-2.5 rounded-xl bg-gradient-to-r from-brand-gold via-brand-goldLight to-brand-goldDark text-slate-950 font-syne font-black text-xs uppercase tracking-wider shadow-lg hover:scale-105 active:scale-95 transition">
+          Reserve Bay (10% Token)
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-8 py-8 sm:py-14 space-y-16 sm:space-y-24">
+    
+    <!-- ============================================================ -->
+    <!-- 1. HERO SECTION WITH REAL SUPERCAR PHOTOGRAPHY & STUDIO GLOW -->
+    <!-- ============================================================ -->
+    <section class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+      <div class="lg:col-span-7 space-y-6">
+        
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-cyan/10 border border-brand-cyan/40 text-brand-cyan text-xs font-mono uppercase tracking-widest">
+          <span class="w-2 h-2 rounded-full bg-brand-cyan animate-ping"></span>
+          Temperature-Controlled Cleanroom Studio
+        </div>
+        
+        <h1 class="text-3xl sm:text-5xl lg:text-6xl font-syne font-black text-white leading-tight uppercase tracking-tight">
+          Concours Paint Perfection for <span class="bg-gradient-to-r from-brand-gold via-brand-goldLight to-brand-cyan bg-clip-text text-transparent">Supercars & Icons</span>.
+        </h1>
+
+        <p class="text-slate-300 text-sm sm:text-base leading-relaxed font-light max-w-2xl">
+          Golf Course Road’s dedicated cleanroom detailing laboratory. Self-healing 10-mil TPU Paint Protection Films (PPF) and 10H Graphene Ceramic coatings tailored for Porsche, Defender, Mercedes-AMG, and BMW M chassis. We accept strictly <strong>2 allocations per day</strong> to guarantee zero-defect optical reflection.
+        </p>
+
+        <!-- Metrics Strip -->
+        <div class="grid grid-cols-3 gap-3 pt-2 font-mono">
+          <div class="p-3.5 rounded-2xl bg-brand-panel metallic-border">
+            <span class="text-xl sm:text-2xl font-bold text-brand-gold">10-Mil</span>
+            <p class="text-[10px] text-slate-400 uppercase mt-0.5">Self-Healing TPU Film</p>
+          </div>
+          <div class="p-3.5 rounded-2xl bg-brand-panel metallic-border">
+            <span class="text-xl sm:text-2xl font-bold text-brand-cyan">10H</span>
+            <p class="text-[10px] text-slate-400 uppercase mt-0.5">Diamond Ceramic Matrix</p>
+          </div>
+          <div class="p-3.5 rounded-2xl bg-brand-panel metallic-border">
+            <span class="text-xl sm:text-2xl font-bold text-white">2 Bays</span>
+            <p class="text-[10px] text-slate-400 uppercase mt-0.5">Daily Max Allocation</p>
+          </div>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-3 pt-2">
+          <a href="#booking" class="px-6 py-3.5 rounded-xl bg-gradient-to-r from-brand-gold to-brand-goldDark text-slate-950 font-syne font-extrabold text-xs uppercase tracking-wider glow-gold hover:scale-105 active:scale-95 transition">
+            Lock Calendar Bay (10% Token)
+          </a>
+          <a href="https://wa.me/918368787610?text=Hello%20House%20of%20Polish%20Team,%20I%20would%20like%20to%20schedule%20an%20inspection%20for%20my%20vehicle%20at%20Golf%20Course%20Road." target="_blank" rel="noreferrer" class="px-6 py-3.5 rounded-xl bg-white/5 hover:bg-white/10 text-brand-cyan metallic-border-cyan font-mono text-xs uppercase tracking-wider flex items-center gap-2 transition">
+            <span>💬</span> WhatsApp Inspection
+          </a>
+        </div>
+      </div>
+
+      <!-- Hero Visual: Real Porsche Dark Studio Photography -->
+      <div class="lg:col-span-5 relative">
+        <div class="relative rounded-3xl overflow-hidden metallic-border glow-cyan bg-[#090D18] p-3 sm:p-4 group">
+          
+          <div class="flex justify-between items-center text-xs font-mono mb-2 px-1">
+            <span class="text-brand-gold flex items-center gap-1.5 font-bold">
+              <span class="w-2 h-2 rounded-full bg-brand-gold animate-ping"></span> STAGE 3 CURING
+            </span>
+            <span class="text-slate-400">PORSCHE 911 GT3 RS</span>
+          </div>
+
+          <!-- Real Supercar Dark Studio Image -->
+          <div class="relative h-64 sm:h-80 w-full rounded-2xl overflow-hidden border border-white/10">
+            <img 
+              src="https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?auto=format&fit=crop&w=1200&q=85" 
+              alt="Porsche 911 GT3 RS under studio cleanroom lights with mirror finish reflection"
+              class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
+              loading="eager"
+            />
+            
+            <!-- Dark Gradient Vignette Overlay for Luxury Finish -->
+            <div class="absolute inset-0 bg-gradient-to-t from-[#090D18] via-transparent to-black/40"></div>
+
+            <!-- Optical Reflection Tag Overlay -->
+            <div class="absolute bottom-3 left-3 right-3 flex items-center justify-between text-[11px] font-mono bg-black/75 backdrop-blur-md border border-white/10 px-3 py-2 rounded-xl">
+              <div>
+                <span class="text-slate-400 block text-[9px]">SURFACE REFLECTION:</span>
+                <span class="text-brand-gold font-bold">99.4 Gloss Units (GU)</span>
+              </div>
+              <div class="text-right">
+                <span class="text-slate-400 block text-[9px]">WATER CONTACT ANGLE:</span>
+                <span class="text-brand-cyan font-bold">118° Hydrophobic</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Technical Specs Strip -->
+          <div class="grid grid-cols-2 gap-2 text-[11px] font-mono mt-3">
+            <div class="bg-black/60 p-2.5 rounded-xl border border-white/5">
+              <span class="text-slate-500 block text-[9px]">COATING SPEC:</span>
+              <span class="text-white font-semibold">Dual Graphene Matrix</span>
+            </div>
+            <div class="bg-black/60 p-2.5 rounded-xl border border-white/5">
+              <span class="text-slate-500 block text-[9px]">WARRANTY SEAL:</span>
+              <span class="text-brand-gold font-semibold">5-Yr Comprehensive</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- 2. INTERACTIVE BEFORE VS AFTER REAL PHOTOGRAPHY SLIDER        -->
+    <!-- ============================================================ -->
+    <section id="lab" class="space-y-6 scroll-mt-24">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-white/10 pb-4">
+        <div>
+          <span class="text-brand-cyan text-xs font-mono uppercase tracking-widest font-bold">Optical Precision Lab</span>
+          <h2 class="text-2xl sm:text-4xl font-syne font-bold text-white uppercase mt-1">
+            Real Paintwork <span class="text-brand-gold">Transformation</span>
+          </h2>
+          <p class="text-slate-400 text-xs sm:text-sm font-light mt-1">
+            Drag the cursor to compare swirl-marked, oxidized clear coat vs micro-corrected 10H ceramic mirror reflection.
+          </p>
+        </div>
+        <div class="flex items-center gap-2 text-xs font-mono">
+          <span class="px-3 py-1 rounded-full bg-red-950/60 border border-red-500/40 text-red-300">Left: Swirls & Scratches</span>
+          <span class="px-3 py-1 rounded-full bg-emerald-950/60 border border-emerald-500/40 text-emerald-300">Right: Corrected 10H Mirror</span>
+        </div>
+      </div>
+
+      <!-- Real Image Comparison Slider -->
+      <div class="relative w-full h-[340px] sm:h-[480px] rounded-3xl overflow-hidden select-none border border-brand-gold/40 shadow-2xl" id="slider-container">
+        
+        <!-- Background Image: "AFTER" (Mirror Gloss, Flawless Paint) -->
+        <div class="absolute inset-0">
+          <img 
+            src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1600&q=85" 
+            alt="Flawless mirror ceramic coated Porsche paint with extreme reflections and zero swirls"
+            class="w-full h-full object-cover object-center"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/30"></div>
+          
+          <!-- After Tag -->
+          <div class="absolute bottom-5 right-5 z-10 text-right bg-black/80 backdrop-blur-md border border-brand-cyan/50 p-3 rounded-2xl max-w-xs">
+            <span class="px-2 py-0.5 rounded bg-brand-cyan/20 text-brand-cyan border border-brand-cyan/40 text-[10px] font-mono font-bold uppercase tracking-wider">
+              AFTER: 10H Ceramic Matrix
+            </span>
+            <div class="text-sm sm:text-base font-syne font-bold text-white mt-1">Mirror Flake Pop</div>
+            <p class="text-[10px] font-mono text-emerald-300">✓ 0 Micro-Swirls • 100% Optical Clarity</p>
+          </div>
+        </div>
+
+        <!-- Foreground Image: "BEFORE" (Swirled, Scratched, Oxidized) - Clipped -->
+        <div class="absolute inset-0 overflow-hidden" id="before-layer" style="width: 50%;">
+          <div class="absolute inset-0 w-[100vw] max-w-7xl h-full">
+            <img 
+              src="https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=1600&q=85" 
+              alt="Swirl marked and scratched vehicle paint before multi-stage rotary correction"
+              class="w-full h-full object-cover object-center filter contrast-125 brightness-90"
+            />
+            <div class="absolute inset-0 bg-red-950/20 mix-blend-overlay"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/30"></div>
+
+            <!-- Before Tag -->
+            <div class="absolute bottom-5 left-5 z-10 bg-black/80 backdrop-blur-md border border-red-500/50 p-3 rounded-2xl max-w-xs">
+              <span class="px-2 py-0.5 rounded bg-red-900/60 text-red-300 border border-red-700 text-[10px] font-mono font-bold uppercase tracking-wider">
+                BEFORE: Severe Micro-Marring
+              </span>
+              <div class="text-sm sm:text-base font-syne font-bold text-white mt-1">Oxidized & Swirled</div>
+              <p class="text-[10px] font-mono text-red-300">✕ Hologram Scratches • Acid Rain Etch</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slider Divider & Handle -->
+        <div class="absolute top-0 bottom-0 z-30 cursor-ew-resize flex items-center justify-center" id="slider-handle" style="left: 50%;">
+          <div class="w-1 h-full bg-gradient-to-b from-brand-cyan via-white to-brand-gold shadow-[0_0_20px_#00F0FF]"></div>
+          <div class="absolute w-11 h-11 rounded-full bg-[#07090F] border-2 border-brand-gold flex items-center justify-center text-brand-cyan text-xs font-bold shadow-2xl">
+            ◄►
+          </div>
+        </div>
+
+      </div>
+      <p class="text-center text-xs font-mono text-slate-500">
+        👆 Touch or drag the gold line left / right to inspect microscopic surface clarity.
+      </p>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- 3. REAL CLEANROOM WORK-IN-PROGRESS (WIP) SUPERCAR TELEMETRY  -->
+    <!-- ============================================================ -->
+    <section id="bays" class="space-y-6 scroll-mt-24">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-3 border-b border-white/10 pb-4">
+        <div>
+          <span class="text-brand-cyan text-xs font-mono uppercase tracking-widest font-bold">Live Cleanroom Operations</span>
+          <h2 class="text-2xl sm:text-4xl font-syne font-bold text-white uppercase mt-1">
+            Active Bay Telemetry (Golf Course Rd)
+          </h2>
+          <p class="text-slate-400 text-xs sm:text-sm font-light mt-1">
+            Real-time client monitoring under dust-free positive-pressure cleanroom airflow.
+          </p>
+        </div>
+        <div class="flex items-center gap-2 text-xs font-mono text-emerald-400">
+          <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping"></span>
+          HVAC CLIMATE: 21.5°C • HUMIDITY: 46% • AIR PRESSURE: +12 Pa
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        
+        <!-- Bay 1: Porsche 911 GT3 (IR Curing) -->
+        <div class="bg-brand-panel metallic-border rounded-3xl overflow-hidden space-y-4 relative group">
+          <div class="relative h-56 sm:h-64 w-full overflow-hidden">
+            <img 
+              src="https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?auto=format&fit=crop&w=1000&q=80" 
+              alt="Porsche 911 GT3 under cleanroom infrared curing lamps"
+              class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-[#090D18] via-transparent to-black/50"></div>
+            
+            <div class="absolute top-3 left-3 right-3 flex justify-between items-center text-xs font-mono">
+              <span class="px-2.5 py-1 rounded-full bg-brand-gold/90 text-slate-950 font-bold flex items-center gap-1.5 shadow">
+                <span class="w-2 h-2 rounded-full bg-slate-950 animate-pulse"></span>
+                BAY 01: INFRA-RED CURING
+              </span>
+              <span class="bg-black/75 backdrop-blur-md px-2.5 py-1 rounded-lg text-slate-300 border border-white/10 font-mono">
+                CAMERA FEED #GC-01
+              </span>
+            </div>
+
+            <div class="absolute bottom-3 left-4 right-4 flex justify-between items-end">
+              <div>
+                <h3 class="text-xl font-syne font-bold text-white">Porsche 911 GT3 (992)</h3>
+                <p class="text-xs text-brand-gold font-mono">Treatment: Graphene 10H Ceramic Shield</p>
+              </div>
+              <span class="text-base font-mono font-black text-brand-gold">85% COMPLETE</span>
+            </div>
+          </div>
+
+          <div class="p-5 pt-0 space-y-4">
+            <!-- Progress Bar -->
+            <div class="w-full bg-black/60 rounded-full h-2 overflow-hidden border border-white/10">
+              <div class="bg-gradient-to-r from-brand-gold to-brand-goldLight h-full rounded-full" style="width: 85%;"></div>
+            </div>
+
+            <!-- Inspection Check-sheet -->
+            <div class="grid grid-cols-2 gap-2 text-[11px] font-mono">
+              <div class="bg-[#05070C] p-2.5 rounded-xl border border-white/5 text-slate-300">
+                <span class="text-slate-500 block text-[9px] uppercase">Active Phase:</span>
+                <strong class="text-emerald-400">✓ IR Heat Wave Curing (Coat 2)</strong>
+              </div>
+              <div class="bg-[#05070C] p-2.5 rounded-xl border border-white/5 text-slate-300">
+                <span class="text-slate-500 block text-[9px] uppercase">Concours Handover:</span>
+                <strong class="text-white">Today 7:30 PM IST</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bay 2: Land Rover Defender 110 (Full Body PPF) -->
+        <div class="bg-brand-panel metallic-border-cyan rounded-3xl overflow-hidden space-y-4 relative group">
+          <div class="relative h-56 sm:h-64 w-full overflow-hidden">
+            <img 
+              src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=1000&q=80" 
+              alt="Land Rover Defender 110 receiving matte self-healing paint protection film wrap"
+              class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-[#090D18] via-transparent to-black/50"></div>
+            
+            <div class="absolute top-3 left-3 right-3 flex justify-between items-center text-xs font-mono">
+              <span class="px-2.5 py-1 rounded-full bg-brand-cyan/90 text-slate-950 font-bold flex items-center gap-1.5 shadow">
+                <span class="w-2 h-2 rounded-full bg-slate-950 animate-pulse"></span>
+                BAY 02: DUST-FREE PPF APPLICATION
+              </span>
+              <span class="bg-black/75 backdrop-blur-md px-2.5 py-1 rounded-lg text-slate-300 border border-white/10 font-mono">
+                CAMERA FEED #GC-02
+              </span>
+            </div>
+
+            <div class="absolute bottom-3 left-4 right-4 flex justify-between items-end">
+              <div>
+                <h3 class="text-xl font-syne font-bold text-white">Land Rover Defender 110</h3>
+                <p class="text-xs text-brand-cyan font-mono">Treatment: Full Body 10-Mil Matte TPU PPF</p>
+              </div>
+              <span class="text-base font-mono font-black text-brand-cyan">45% COMPLETE</span>
+            </div>
+          </div>
+
+          <div class="p-5 pt-0 space-y-4">
+            <!-- Progress Bar -->
+            <div class="w-full bg-black/60 rounded-full h-2 overflow-hidden border border-white/10">
+              <div class="bg-gradient-to-r from-brand-cyan to-blue-500 h-full rounded-full" style="width: 45%;"></div>
+            </div>
+
+            <!-- Inspection Check-sheet -->
+            <div class="grid grid-cols-2 gap-2 text-[11px] font-mono">
+              <div class="bg-[#05070C] p-2.5 rounded-xl border border-white/5 text-slate-300">
+                <span class="text-slate-500 block text-[9px] uppercase">Active Phase:</span>
+                <strong class="text-brand-cyan">Edge Tucking & Seam Alignment</strong>
+              </div>
+              <div class="bg-[#05070C] p-2.5 rounded-xl border border-white/5 text-slate-300">
+                <span class="text-slate-500 block text-[9px] uppercase">Concours Handover:</span>
+                <strong class="text-white">Tomorrow 4:00 PM IST</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- 4. DETAILING PACKAGES WITH CONTEXTUAL REAL PHOTOGRAPHY       -->
+    <!-- ============================================================ -->
+    <section id="packages" class="space-y-6 scroll-mt-24">
+      <div class="border-b border-white/10 pb-4">
+        <span class="text-brand-gold text-xs font-mono uppercase tracking-widest font-bold">Concours Formulations</span>
+        <h2 class="text-2xl sm:text-4xl font-syne font-bold text-white uppercase mt-1">
+          Bespoke Treatment <span class="text-brand-cyan">Tiers</span>
+        </h2>
+        <p class="text-slate-400 text-xs sm:text-sm font-light mt-1">
+          Precision execution using Rupes random orbital polishers, Gyeon quartz matrices, and STEK / XPEL TPU films.
+        </p>
+      </div>
+
+      <!-- Segment Selector Buttons -->
+      <div class="flex flex-wrap gap-2.5 p-1.5 rounded-2xl bg-[#090D18] border border-white/10 w-fit">
+        <button onclick="setSegment('sedan')" id="seg-sedan" class="px-4 py-2 rounded-xl text-xs font-mono font-bold uppercase transition bg-brand-gold text-slate-950">
+          Sedan / Coupe (Porsche 911, M3/M5, C/E-Class)
+        </button>
+        <button onclick="setSegment('compact-suv')" id="seg-compact-suv" class="px-4 py-2 rounded-xl text-xs font-mono font-bold uppercase transition text-slate-400 hover:text-white">
+          Mid SUV (Macan, X3/X5, GLC/GLE)
+        </button>
+        <button onclick="setSegment('full-suv')" id="seg-full-suv" class="px-4 py-2 rounded-xl text-xs font-mono font-bold uppercase transition text-slate-400 hover:text-white">
+          Full SUV / Supercar (Defender, G-Wagon, Urus, Range Rover)
+        </button>
+      </div>
+
+      <!-- Packages 4-Card Grid with Real High-Res Photos -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+        
+        <!-- Treatment 1: Full Body TPU PPF -->
+        <div class="bg-brand-panel metallic-border rounded-3xl overflow-hidden flex flex-col justify-between hover:border-brand-gold transition duration-300 group">
+          <div class="relative h-44 w-full overflow-hidden">
+            <img 
+              src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=600&q=80" 
+              alt="Installation of clear self healing paint protection film on vehicle bonnet" 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-brand-panel via-transparent to-black/30"></div>
+            <span class="absolute top-3 left-3 px-2.5 py-0.5 rounded-full bg-brand-gold text-slate-950 text-[10px] font-mono font-bold uppercase">
+              Stone-Chip Barrier
+            </span>
+          </div>
+
+          <div class="p-5 pt-2 space-y-3 flex-1 flex flex-col justify-between">
+            <div class="space-y-2">
+              <h3 class="text-base font-syne font-bold text-white uppercase group-hover:text-brand-gold transition">
+                Full Body 10-Mil TPU PPF
+              </h3>
+              <p class="text-xs text-slate-400 leading-relaxed font-light">
+                High-tensile self-healing polyurethane film. Self-heals swirl marks under sunlight. 10-year anti-yellowing warranty.
+              </p>
+              <div class="text-2xl font-mono font-extrabold text-white pt-2 border-t border-white/5" id="price-ppf">
+                ₹65,000*
+              </div>
+              <ul class="text-[11px] font-mono text-slate-300 space-y-1 pt-1">
+                <li>✓ 10-Mil Hydrophobic Top Coat</li>
+                <li>✓ Wrapped Edges & Corners</li>
+                <li>✓ 10-Year Warranty Card</li>
+              </ul>
+            </div>
+            
+            <button onclick="selectPackageAndScroll('ppf', 'Full Body 10-Mil TPU PPF', 65000)" class="w-full mt-3 py-2.5 rounded-xl bg-white/5 hover:bg-brand-gold text-brand-gold hover:text-black font-syne font-bold text-xs uppercase tracking-wider metallic-border transition">
+              Lock Bay Slot
+            </button>
+          </div>
+        </div>
+
+        <!-- Treatment 2: Graphene Ultra Ceramic -->
+        <div class="bg-brand-panel metallic-border rounded-3xl overflow-hidden flex flex-col justify-between hover:border-brand-cyan transition duration-300 group ring-1 ring-brand-cyan/30">
+          <div class="relative h-44 w-full overflow-hidden">
+            <img 
+              src="https://images.unsplash.com/photo-1520340356584-f9917d1eea6f?auto=format&fit=crop&w=600&q=80" 
+              alt="Liquid hydrophobic water beads on ceramic coated dark metallic vehicle paint" 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-brand-panel via-transparent to-black/30"></div>
+            <span class="absolute top-3 left-3 px-2.5 py-0.5 rounded-full bg-brand-cyan text-slate-950 text-[10px] font-mono font-bold uppercase">
+              Top Requested
+            </span>
+          </div>
+
+          <div class="p-5 pt-2 space-y-3 flex-1 flex flex-col justify-between">
+            <div class="space-y-2">
+              <h3 class="text-base font-syne font-bold text-white uppercase group-hover:text-brand-cyan transition">
+                Graphene 10H Ceramic Matrix
+              </h3>
+              <p class="text-xs text-slate-400 leading-relaxed font-light">
+                Dual-layer reduced graphene oxide matrix. Intense water-beading angle, UV reflection, 5-year certified shield.
+              </p>
+              <div class="text-2xl font-mono font-extrabold text-brand-cyan pt-2 border-t border-white/5" id="price-ceramic">
+                ₹38,000*
+              </div>
+              <ul class="text-[11px] font-mono text-slate-300 space-y-1 pt-1">
+                <li>✓ Dual Base + Hydrophobic Top</li>
+                <li>✓ Wheel Calipers & Rim Faces</li>
+                <li>✓ 5-Year Certified Warranty</li>
+              </ul>
+            </div>
+
+            <button onclick="selectPackageAndScroll('ceramic', 'Graphene 10H Ceramic Matrix', 38000)" class="w-full mt-3 py-2.5 rounded-xl bg-gradient-to-r from-brand-cyan to-blue-500 text-black font-syne font-bold text-xs uppercase tracking-wider shadow-lg hover:scale-105 active:scale-95 transition">
+              Lock Bay Slot
+            </button>
+          </div>
+        </div>
+
+        <!-- Treatment 3: Multi-Stage Paint Correction -->
+        <div class="bg-brand-panel metallic-border rounded-3xl overflow-hidden flex flex-col justify-between hover:border-brand-gold transition duration-300 group">
+          <div class="relative h-44 w-full overflow-hidden">
+            <img 
+              src="https://images.unsplash.com/photo-1607860108855-64acf2078ed9?auto=format&fit=crop&w=600&q=80" 
+              alt="Detailer holding rotary dual action polisher correcting clearcoat on black vehicle" 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-brand-panel via-transparent to-black/30"></div>
+            <span class="absolute top-3 left-3 px-2.5 py-0.5 rounded-full bg-white/20 text-white text-[10px] font-mono font-bold uppercase">
+              Mirror Recovery
+            </span>
+          </div>
+
+          <div class="p-5 pt-2 space-y-3 flex-1 flex flex-col justify-between">
+            <div class="space-y-2">
+              <h3 class="text-base font-syne font-bold text-white uppercase group-hover:text-brand-gold transition">
+                Multi-Stage Paint Correction
+              </h3>
+              <p class="text-xs text-slate-400 leading-relaxed font-light">
+                Full rotary and random-orbital jewel polishing. Removes 90%+ of swirls, buffer trails, and acid rain etching.
+              </p>
+              <div class="text-2xl font-mono font-extrabold text-white pt-2 border-t border-white/5" id="price-correction">
+                ₹18,500*
+              </div>
+              <ul class="text-[11px] font-mono text-slate-300 space-y-1 pt-1">
+                <li>✓ 3-Step Heavy Cut & Jewel Buff</li>
+                <li>✓ Micron Depth Gauge Profiling</li>
+                <li>✓ SiO2 Synthetic Sealant Base</li>
+              </ul>
+            </div>
+
+            <button onclick="selectPackageAndScroll('correction', 'Multi-Stage Paint Correction', 18500)" class="w-full mt-3 py-2.5 rounded-xl bg-white/5 hover:bg-brand-gold text-brand-gold hover:text-black font-syne font-bold text-xs uppercase tracking-wider metallic-border transition">
+              Lock Bay Slot
+            </button>
+          </div>
+        </div>
+
+        <!-- Treatment 4: Alcantara & Leather Interior Spa -->
+        <div class="bg-brand-panel metallic-border rounded-3xl overflow-hidden flex flex-col justify-between hover:border-brand-gold transition duration-300 group">
+          <div class="relative h-44 w-full overflow-hidden">
+            <img 
+              src="https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=600&q=80" 
+              alt="Bespoke luxury vehicle interior with nappa leather seats and sports steering wheel" 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-brand-panel via-transparent to-black/30"></div>
+            <span class="absolute top-3 left-3 px-2.5 py-0.5 rounded-full bg-white/20 text-white text-[10px] font-mono font-bold uppercase">
+              Cabin Preservation
+            </span>
+          </div>
+
+          <div class="p-5 pt-2 space-y-3 flex-1 flex flex-col justify-between">
+            <div class="space-y-2">
+              <h3 class="text-base font-syne font-bold text-white uppercase group-hover:text-brand-gold transition">
+                Alcantara & Leather Detail
+              </h3>
+              <p class="text-xs text-slate-400 leading-relaxed font-light">
+                pH-neutral leather decontamination, conditioning, and ceramic barrier. Full ozone antibacterial cabin steaming.
+              </p>
+              <div class="text-2xl font-mono font-extrabold text-white pt-2 border-t border-white/5" id="price-interior">
+                ₹12,000*
+              </div>
+              <ul class="text-[11px] font-mono text-slate-300 space-y-1 pt-1">
+                <li>✓ Nappa Leather Ceramic Shield</li>
+                <li>✓ Alcantara Fiber Fluffing</li>
+                <li>✓ AC Duct Ozone Disinfection</li>
+              </ul>
+            </div>
+
+            <button onclick="selectPackageAndScroll('interior', 'Alcantara & Leather Preservation', 12000)" class="w-full mt-3 py-2.5 rounded-xl bg-white/5 hover:bg-brand-gold text-brand-gold hover:text-black font-syne font-bold text-xs uppercase tracking-wider metallic-border transition">
+              Lock Bay Slot
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- 5. CLIENT SUPERCAR ROSTER (GOLF COURSE ROAD SHOWCASE)        -->
+    <!-- ============================================================ -->
+    <section id="gallery" class="space-y-6 scroll-mt-24">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-3 border-b border-white/10 pb-4">
+        <div>
+          <span class="text-brand-gold text-xs font-mono uppercase tracking-widest font-bold">Studio Portfolio</span>
+          <h2 class="text-2xl sm:text-4xl font-syne font-bold text-white uppercase mt-1">
+            Supercar Roster <span class="text-brand-cyan">Golf Course Rd</span>
+          </h2>
+          <p class="text-slate-400 text-xs sm:text-sm font-light mt-1">
+            Chassis recently rolled out from our cleanroom bays under DLF Phase 5 studio inspection.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        
+        <!-- Roster 1: BMW M8 Competition -->
+        <div class="rounded-3xl overflow-hidden relative group border border-white/10">
+          <img 
+            src="https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=700&q=80" 
+            alt="BMW M8 Competition Coupé after 10H ceramic coating"
+            class="w-full h-64 object-cover object-center group-hover:scale-110 transition duration-700"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
+          <div class="absolute bottom-4 left-4 right-4">
+            <span class="text-[9px] font-mono text-brand-cyan uppercase tracking-wider block">DLF The Camellias Resident</span>
+            <div class="font-syne font-bold text-white text-base">BMW M8 Competition</div>
+            <p class="text-[10px] font-mono text-brand-gold">Full PPF + Dual Graphene Matrix</p>
+          </div>
+        </div>
+
+        <!-- Roster 2: Mercedes-AMG G63 -->
+        <div class="rounded-3xl overflow-hidden relative group border border-white/10">
+          <img 
+            src="https://images.unsplash.com/photo-1520050206274-a1ae44613e6d?auto=format&fit=crop&w=700&q=80" 
+            alt="Mercedes-AMG G63 in matte black with ceramic film protection"
+            class="w-full h-64 object-cover object-center group-hover:scale-110 transition duration-700"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
+          <div class="absolute bottom-4 left-4 right-4">
+            <span class="text-[9px] font-mono text-brand-cyan uppercase tracking-wider block">DLF Magnolias Resident</span>
+            <div class="font-syne font-bold text-white text-base">Mercedes-AMG G63</div>
+            <p class="text-[10px] font-mono text-brand-gold">Full Body Matte TPU Wrap</p>
+          </div>
+        </div>
+
+        <!-- Roster 3: Porsche 911 Targa -->
+        <div class="rounded-3xl overflow-hidden relative group border border-white/10">
+          <img 
+            src="https://images.unsplash.com/photo-1611821064430-0d40291d0f0d?auto=format&fit=crop&w=700&q=80" 
+            alt="Porsche 911 sports car polished with high gloss reflection"
+            class="w-full h-64 object-cover object-center group-hover:scale-110 transition duration-700"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
+          <div class="absolute bottom-4 left-4 right-4">
+            <span class="text-[9px] font-mono text-brand-cyan uppercase tracking-wider block">Golf Links Resident</span>
+            <div class="font-syne font-bold text-white text-base">Porsche 911 4S</div>
+            <p class="text-[10px] font-mono text-brand-gold">Multi-Stage Jewel Correction</p>
+          </div>
+        </div>
+
+        <!-- Roster 4: Defender V8 -->
+        <div class="rounded-3xl overflow-hidden relative group border border-white/10">
+          <img 
+            src="https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?auto=format&fit=crop&w=700&q=80" 
+            alt="Audi RS luxury sports car with deep hydrophobic paint gloss"
+            class="w-full h-64 object-cover object-center group-hover:scale-110 transition duration-700"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
+          <div class="absolute bottom-4 left-4 right-4">
+            <span class="text-[9px] font-mono text-brand-cyan uppercase tracking-wider block">Central Park Resorts Resident</span>
+            <div class="font-syne font-bold text-white text-base">Audi RS7 Sportback</div>
+            <p class="text-[10px] font-mono text-brand-gold">10-Mil Gloss TPU PPF</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- 6. HIGH-TICKET BAY RESERVATION (10% ADVANCE TOKEN LOCK)      -->
+    <!-- ============================================================ -->
+    <section id="booking" class="scroll-mt-24">
+      <div class="gold-box rounded-3xl p-6 sm:p-10 metallic-border glow-gold relative overflow-hidden bg-gradient-to-b from-[#0E1527] to-[#05070D]">
+        <div class="max-w-3xl mx-auto space-y-6">
+          <div class="text-center space-y-2">
+            <span class="px-3 py-1 rounded-full bg-brand-gold/15 text-brand-gold border border-brand-gold/40 text-xs font-mono uppercase tracking-widest">
+              Limited Allocation Protocol
+            </span>
+            <h2 class="text-2xl sm:text-4xl font-syne font-black text-white uppercase">
+              Lock Your Detailing Bay (10% Token)
+            </h2>
+            <p class="text-slate-300 text-xs sm:text-sm font-light">
+              To preserve our 2-car daily limit on Golf Course Road, calendar slots are locked strictly upon receipt of a 10% token deposit. Balance payable post-inspection upon vehicle handover.
+            </p>
+          </div>
+
+          <!-- Interactive Booking Form -->
+          <form onsubmit="handleBayReservation(event)" class="space-y-4 pt-2 text-xs font-mono">
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div>
+                <label class="block text-slate-300 uppercase mb-1">Vehicle Make & Model *</label>
+                <input id="input-vehicle" type="text" placeholder="e.g. Porsche 911 / Defender 110 / BMW M8" required class="w-full bg-[#05070E] border border-white/10 rounded-xl p-3 text-white focus:border-brand-gold focus:outline-none text-xs">
+              </div>
+              <div>
+                <label class="block text-slate-300 uppercase mb-1">Registration No. (Optional)</label>
+                <input id="input-reg" type="text" placeholder="e.g. HR 26 XX 0001 / UNREGISTERED" class="w-full bg-[#05070E] border border-white/10 rounded-xl p-3 text-white focus:border-brand-gold focus:outline-none text-xs font-mono uppercase">
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div>
+                <label class="block text-slate-300 uppercase mb-1">Select Service Package *</label>
+                <select id="select-package" onchange="calculateDeposit()" class="w-full bg-[#05070E] border border-white/10 rounded-xl p-3 text-brand-goldLight font-bold focus:border-brand-gold focus:outline-none text-xs">
+                  <option value="65000" data-name="Full Body 10-Mil TPU PPF">Full Body 10-Mil TPU PPF (₹65,000 base)</option>
+                  <option value="38000" data-name="Graphene 10H Ceramic Matrix" selected>Graphene 10H Ceramic Matrix (₹38,000 base)</option>
+                  <option value="18500" data-name="Multi-Stage Paint Correction">Multi-Stage Paint Correction (₹18,500 base)</option>
+                  <option value="12000" data-name="Alcantara & Leather Detail">Alcantara & Leather Detail (₹12,000 base)</option>
+                </select>
+              </div>
+
+              <div>
+                <label class="block text-slate-300 uppercase mb-1">Vehicle Category Multiplier *</label>
+                <select id="select-size" onchange="calculateDeposit()" class="w-full bg-[#05070E] border border-white/10 rounded-xl p-3 text-white focus:border-brand-gold focus:outline-none text-xs">
+                  <option value="1.0">Coupe / Sedan (Standard Multiplier 1.0x)</option>
+                  <option value="1.15">Mid SUV / Crossover (+15% Surface Area)</option>
+                  <option value="1.30">Full-Size Luxury SUV (+30% Surface Area)</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div>
+                <label class="block text-slate-300 uppercase mb-1">Preferred Cleanroom Date *</label>
+                <input id="input-date" type="date" required class="w-full bg-[#05070E] border border-white/10 rounded-xl p-3 text-white focus:border-brand-gold focus:outline-none text-xs">
+              </div>
+              <div>
+                <label class="block text-slate-300 uppercase mb-1">Client Full Name & Mobile *</label>
+                <input id="input-contact" type="text" placeholder="Name & Mobile (+91...)" required class="w-full bg-[#05070E] border border-white/10 rounded-xl p-3 text-white focus:border-brand-gold focus:outline-none text-xs">
+              </div>
+            </div>
+
+            <!-- Dynamic Advance Summary Box -->
+            <div class="p-4 rounded-2xl bg-[#050811] border border-brand-gold/40 space-y-2 mt-4">
+              <div class="flex justify-between items-center text-xs">
+                <span class="text-slate-400">Total Treatment Investment:</span>
+                <span class="font-mono text-base font-bold text-white" id="summary-total">₹38,000</span>
+              </div>
+              <div class="flex justify-between items-center text-xs border-t border-white/10 pt-2">
+                <div>
+                  <span class="text-brand-gold font-bold text-sm block">10% Slot Token to Lock Bay:</span>
+                  <span class="text-[10px] text-slate-500">Guarantees dedicated cleanroom bay for your allocated date</span>
+                </div>
+                <div class="text-right">
+                  <span class="text-xl sm:text-2xl font-black font-mono text-brand-gold" id="summary-advance">₹3,800</span>
+                  <span class="text-[10px] text-emerald-400 block">Balance on Handover</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Confirm Button -->
+            <button type="submit" class="w-full py-4 rounded-xl bg-gradient-to-r from-brand-gold via-brand-goldLight to-brand-goldDark text-slate-950 font-syne font-black text-xs sm:text-sm uppercase tracking-widest shadow-xl hover:scale-[1.01] active:scale-95 transition flex items-center justify-center gap-2">
+              <span>🔒</span>
+              <span>Lock Bay with 10% Advance via WhatsApp (+91 83687 87610)</span>
+            </button>
+            
+            <p class="text-center text-[10px] text-slate-500 font-mono">
+              Direct connection to Studio Lead at House of Polish, Golf Course Road, Gurgaon.
+            </p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- 7. STUDIO LOCATION & CONTACT PROTOCOL                        -->
+    <!-- ============================================================ -->
+    <section class="border-t border-white/10 pt-10">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-xs font-mono">
+        <div class="p-5 rounded-2xl bg-brand-panel metallic-border space-y-2">
+          <span class="text-brand-gold uppercase text-[10px] font-bold block">Studio Cleanroom</span>
+          <h4 class="text-base font-syne font-bold text-white">House of Polish</h4>
+          <p class="text-slate-400 font-light leading-relaxed">
+            Golf Course Road, Gurgaon, Delhi NCR.<br>
+            Opposite DLF Phase 5 / Horizon Center Hub.
+          </p>
+        </div>
+
+        <div class="p-5 rounded-2xl bg-brand-panel metallic-border space-y-2">
+          <span class="text-brand-cyan uppercase text-[10px] font-bold block">Operating Protocol</span>
+          <h4 class="text-base font-syne font-bold text-white">Bespoke By Appointment</h4>
+          <p class="text-slate-400 font-light leading-relaxed">
+            Tuesday – Sunday: 09:30 AM – 08:00 PM<br>
+            Strictly 2 cars detailed per working cycle.
+          </p>
+        </div>
+
+        <div class="p-5 rounded-2xl bg-brand-panel metallic-border space-y-2">
+          <span class="text-brand-gold uppercase text-[10px] font-bold block">Direct Concierge</span>
+          <h4 class="text-base font-syne font-bold text-white">+91 83687 87610</h4>
+          <p class="text-slate-400 font-light leading-relaxed">
+            Phone & WhatsApp Enabled 24/7.<br>
+            Pick-up & Flatbed transport available upon request.
+          </p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="w-full bg-[#020307] border-t border-brand-gold/20 py-8 px-4 text-center space-y-2 text-xs font-mono text-slate-500">
+    <div class="flex items-center justify-center gap-2">
+      <span class="font-syne font-black text-white text-sm">HOUSE OF POLISH</span>
+      <span class="text-brand-gold">•</span>
+      <span class="text-slate-400">GOLF COURSE ROAD, GURGAON</span>
+    </div>
+    <p>© 2026 House of Polish Detailing. All rights reserved. High-ticket Ceramic, Graphene & TPU PPF Studio.</p>
+  </footer>
+
+  <!-- Floating Mobile Action Bar -->
+  <div class="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-[#05070D]/95 backdrop-blur-md border-t border-brand-gold/30 p-2.5 grid grid-cols-2 gap-2">
+    <a href="tel:+918368787610" class="py-2.5 rounded-xl bg-white/10 text-white font-mono font-bold text-xs flex items-center justify-center gap-1.5 border border-white/20">
+      <span>📞</span> Call Studio
+    </a>
+    <a href="#booking" class="py-2.5 rounded-xl bg-gradient-to-r from-brand-gold to-brand-goldDark text-slate-950 font-syne font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-1 shadow-lg">
+      <span>🔒</span> 10% Bay Lock
+    </a>
+  </div>
+
+  <!-- JavaScript Interaction Logic -->
+  <script>
+    // Segment Pricing Multipliers
+    let currentMultiplier = 1.0;
+
+    function setSegment(type) {
+      const btnSedan = document.getElementById('seg-sedan');
+      const btnCompact = document.getElementById('seg-compact-suv');
+      const btnFull = document.getElementById('seg-full-suv');
+      const selectSize = document.getElementById('select-size');
+
+      // Reset styles
+      [btnSedan, btnCompact, btnFull].forEach(b => {
+        b.className = 'px-4 py-2 rounded-xl text-xs font-mono font-bold uppercase transition text-slate-400 hover:text-white';
+      });
+
+      if (type === 'sedan') {
+        btnSedan.className = 'px-4 py-2 rounded-xl text-xs font-mono font-bold uppercase transition bg-brand-gold text-slate-950';
+        currentMultiplier = 1.0;
+        selectSize.value = "1.0";
+      } else if (type === 'compact-suv') {
+        btnCompact.className = 'px-4 py-2 rounded-xl text-xs font-mono font-bold uppercase transition bg-brand-gold text-slate-950';
+        currentMultiplier = 1.15;
+        selectSize.value = "1.15";
+      } else if (type === 'full-suv') {
+        btnFull.className = 'px-4 py-2 rounded-xl text-xs font-mono font-bold uppercase transition bg-brand-gold text-slate-950';
+        currentMultiplier = 1.30;
+        selectSize.value = "1.30";
+      }
+
+      updatePackageCardsDisplay();
+      calculateDeposit();
+    }
+
+    function updatePackageCardsDisplay() {
+      const pPpf = Math.round(65000 * currentMultiplier);
+      const pCeramic = Math.round(38000 * currentMultiplier);
+      const pCorrection = Math.round(18500 * currentMultiplier);
+      const pInterior = Math.round(12000 * currentMultiplier);
+
+      document.getElementById('price-ppf').innerText = '₹' + pPpf.toLocaleString('en-IN') + '*';
+      document.getElementById('price-ceramic').innerText = '₹' + pCeramic.toLocaleString('en-IN') + '*';
+      document.getElementById('price-correction').innerText = '₹' + pCorrection.toLocaleString('en-IN') + '*';
+      document.getElementById('price-interior').innerText = '₹' + pInterior.toLocaleString('en-IN') + '*';
+    }
+
+    function selectPackageAndScroll(pkgCode, pkgName, basePrice) {
+      const select = document.getElementById('select-package');
+      select.value = basePrice.toString();
+      calculateDeposit();
+
+      const bookingSection = document.getElementById('booking');
+      bookingSection.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function calculateDeposit() {
+      const basePrice = parseFloat(document.getElementById('select-package').value);
+      const multiplier = parseFloat(document.getElementById('select-size').value);
+      
+      const totalPrice = Math.round(basePrice * multiplier);
+      const advanceToken = Math.round(totalPrice * 0.10);
+
+      document.getElementById('summary-total').innerText = '₹' + totalPrice.toLocaleString('en-IN');
+      document.getElementById('summary-advance').innerText = '₹' + advanceToken.toLocaleString('en-IN');
+    }
+
+    function handleBayReservation(e) {
+      e.preventDefault();
+      const vehicle = document.getElementById('input-vehicle').value.trim();
+      const reg = document.getElementById('input-reg').value.trim() || 'NEW / UNREGISTERED';
+      const date = document.getElementById('input-date').value;
+      const contact = document.getElementById('input-contact').value.trim();
+      
+      const selectPkg = document.getElementById('select-package');
+      const pkgName = selectPkg.options[selectPkg.selectedIndex].getAttribute('data-name');
+      const total = document.getElementById('summary-total').innerText;
+      const advance = document.getElementById('summary-advance').innerText;
+
+      const message = `*HOUSE OF POLISH - 10% BAY RESERVATION REQUEST*%0A` +
+        `• Studio: Golf Course Road, Gurgaon%0A` +
+        `• Vehicle: ${vehicle} (${reg})%0A` +
+        `• Treatment: ${pkgName}%0A` +
+        `• Total Investment: ${total}%0A` +
+        `• *10% Slot Advance to Lock Bay: ${advance}*%0A` +
+        `• Requested Cleanroom Date: ${date}%0A` +
+        `• Client Contact: ${contact}%0A%0A` +
+        `Please share the UPI details to lock my cleanroom bay.`;
+
+      const whatsappUrl = `https://wa.me/918368787610?text=${message}`;
+      window.open(whatsappUrl, '_blank');
+    }
+
+    // Interactive Slider Logic for Before/After
+    const sliderContainer = document.getElementById('slider-container');
+    const beforeLayer = document.getElementById('before-layer');
+    const sliderHandle = document.getElementById('slider-handle');
+
+    let isDragging = false;
+
+    function setSliderPosition(x) {
+      const rect = sliderContainer.getBoundingClientRect();
+      let pos = (x - rect.left) / rect.width;
+      if (pos < 0.05) pos = 0.05;
+      if (pos > 0.95) pos = 0.95;
+
+      const percentage = pos * 100;
+      beforeLayer.style.width = percentage + '%';
+      sliderHandle.style.left = percentage + '%';
+    }
+
+    sliderContainer.addEventListener('mousedown', (e) => {
+      isDragging = true;
+      setSliderPosition(e.clientX);
+    });
+
+    window.addEventListener('mouseup', () => { isDragging = false; });
+    window.addEventListener('mousemove', (e) => {
+      if (!isDragging) return;
+      setSliderPosition(e.clientX);
+    });
+
+    // Touch support for mobile devices
+    sliderContainer.addEventListener('touchstart', (e) => {
+      isDragging = true;
+      setSliderPosition(e.touches[0].clientX);
+    }, { passive: true });
+
+    window.addEventListener('touchend', () => { isDragging = false; });
+    window.addEventListener('touchmove', (e) => {
+      if (!isDragging) return;
+      setSliderPosition(e.touches[0].clientX);
+    }, { passive: true });
+
+    // Set Default Date as tomorrow
+    window.addEventListener('DOMContentLoaded', () => {
+      const tomorrow = new Date();
+      tomorrow.setDate(tomorrow.getDate() + 1);
+      const yyyy = tomorrow.getFullYear();
+      const mm = String(tomorrow.getMonth() + 1).padStart(2, '0');
+      const dd = String(tomorrow.getDate()).padStart(2, '0');
+      document.getElementById('input-date').value = `${yyyy}-${mm}-${dd}`;
+      calculateDeposit();
+    });
+  </script>
+</body>
+</html>
